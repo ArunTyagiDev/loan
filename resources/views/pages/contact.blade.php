@@ -17,7 +17,7 @@
                         <div class="col-md-6">
                             <div class="border rounded-4 p-4 h-100 bg-light">
                                 <h5 class="fw-bold">Customer Support</h5>
-                                <p class="mb-2 text-secondary">Phone: <strong>+91 99999 12345</strong></p>
+                                <p class="mb-2 text-secondary">Phone: <strong>+91 9756862640</strong></p>
                                 <p class="mb-2 text-secondary">Email: <strong>support@loansolutions.in</strong></p>
                                 <p class="mb-0 text-secondary">Hours: Monday to Saturday, 9:00 AM – 7:00 PM</p>
                             </div>

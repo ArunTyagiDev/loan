@@ -56,8 +56,8 @@
         </div>
     </section>
 
-    <section class="bg-white rounded-4 shadow-sm p-4">
-        <h2 class="fw-bold mb-4">Why customers choose Loan Solutions</h2>
+	<section class="bg-white rounded-4 shadow-sm p-4 mb-5">
+		<h2 class="fw-bold mb-4">Why customers choose Capita Loan 24</h2>
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="d-flex">
@@ -81,5 +81,78 @@
             </div>
         </div>
     </section>
+
+	<section class="rounded-4 shadow-sm p-4 mb-5" style="background: linear-gradient(180deg, #ffffff, #f3f6ff);">
+		<div class="row align-items-center">
+			<div class="col-lg-6">
+				<h2 class="fw-bold mb-3">About capitalloan24</h2>
+				<p class="text-secondary mb-3">
+					At Capita Loan 24, we’re on a mission to make borrowing simple, transparent, and fast.
+					Whether you’re consolidating debt, funding education, or planning a milestone, we tailor loans
+					to your needs with clear terms and reliable support.
+				</p>
+				<ul class="text-secondary mb-4">
+					<li>Personalised offers based on your profile</li>
+					<li>No hidden charges and transparent processing</li>
+					<li>Support on call, email, and WhatsApp</li>
+				</ul>
+				<a href="{{ route('loan.eligibility') }}" class="btn btn-primary btn-lg">Check Eligibility</a>
+			</div>
+			<div class="col-lg-6 mt-4 mt-lg-0">
+				<img class="img-fluid rounded-4 shadow-sm" alt="About capitalloan24"
+					src="https://images.unsplash.com/photo-1553729784-e91953dec042?q=80&w=1280&auto=format&fit=crop">
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-white rounded-4 shadow-sm p-4">
+		<h2 class="fw-bold mb-4 text-center">What our customers say</h2>
+		<div class="row g-4">
+			<div class="col-md-4">
+				<div class="h-100 border-0 card shadow-sm">
+					<div class="card-body">
+						<p class="mb-3">“The process was quick and transparent. I knew my eligibility instantly and the
+							funds were disbursed right after verification.”</p>
+						<div class="d-flex align-items-center">
+							<div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center me-3" style="width:40px;height:40px;">A</div>
+							<div>
+								<div class="fw-semibold">Anita S.</div>
+								<div class="small text-secondary">Mumbai</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="h-100 border-0 card shadow-sm">
+					<div class="card-body">
+						<p class="mb-3">“capitalloan24 offered me the best rate for my salary bracket. The team was very
+							responsive on WhatsApp.”</p>
+						<div class="d-flex align-items-center">
+							<div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center me-3" style="width:40px;height:40px;">R</div>
+							<div>
+								<div class="fw-semibold">Rahul K.</div>
+								<div class="small text-secondary">Bengaluru</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="h-100 border-0 card shadow-sm">
+					<div class="card-body">
+						<p class="mb-3">“Clear terms, no hidden fees, and super quick service. Highly recommended!”</p>
+						<div class="d-flex align-items-center">
+							<div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center me-3" style="width:40px;height:40px;">M</div>
+							<div>
+								<div class="fw-semibold">Meera P.</div>
+								<div class="small text-secondary">Delhi</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 @endsection
 

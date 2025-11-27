@@ -18,11 +18,19 @@
                     <div class="card border-0 shadow-sm h-100">
                         <div class="card-body text-center">
                             <h5 class="fw-bold mb-3">Scan to Pay</h5>
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=230x230&data=upi://pay?pa=loansolutions@upi&pn=Loan%20Solutions&cu=INR"
-                                alt="UPI QR Code" class="img-fluid rounded-3 border mb-3">
+							@php
+								$qrLocalPath = public_path('assets/paytm-qr.png');
+								$qrSrc = file_exists($qrLocalPath)
+									? asset('assets/paytm-qr.png')
+									: 'https://api.qrserver.com/v1/create-qr-code/?size=230x230&data=upi://pay?pa=Paytmqr2810050501011meg3b1gpdl9@paytm&pn=Capita%20Loan%2024&cu=INR';
+							@endphp
+							<img src="{{ $qrSrc }}"
+								alt="UPI QR Code" class="img-fluid rounded-3 border mb-3" style="max-width: 260px;">
+							<div class="d-grid gap-2 mb-3">
+								<a href="{{ route('qr.download') }}" class="btn btn-outline-primary btn-sm">Download QR</a>
+							</div>
                             <p class="text-secondary small mb-0">
-                                Use UPI apps like Google Pay, PhonePe, or Paytm to scan the QR code. Ensure that the
-                                transaction reference is captured in your screenshot or PDF before uploading.
+                                Use UPI apps like Paytm to scan the QR code. Ensure that the transaction reference is captured in your screenshot or PDF before uploading.
                             </p>
                         </div>
                     </div>

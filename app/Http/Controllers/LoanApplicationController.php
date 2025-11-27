@@ -7,6 +7,7 @@ use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
 
 class LoanApplicationController extends Controller
 {
@@ -26,6 +27,8 @@ class LoanApplicationController extends Controller
             'full_name' => ['required', 'string', 'max:255'],
             'email' => ['nullable', 'email', 'max:255'],
             'phone' => ['nullable', 'string', 'max:25'],
+			'pan' => ['nullable', 'regex:/^[A-Z]{5}[0-9]{4}[A-Z]$/'],
+			'dob' => ['nullable', 'date'],
             'salary' => ['required', 'numeric', 'min:0'],
             'employment_type' => ['required', 'string', 'max:120'],
             'monthly_expenses' => ['required', 'numeric', 'min:0'],
@@ -184,6 +187,33 @@ class LoanApplicationController extends Controller
     public function contact()
     {
         return view('pages.contact');
+    }
+
+    public function downloadQr()
+    {
+        $local = public_path('assets/paytm-qr.png');
+        if (file_exists($local)) {
+            return response()->download($local, 'capitalloan24-paytm-qr.png', [
+                'Content-Type' => 'image/png',
+            ]);
+        }
+
+        $fallbackUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=230x230&data=upi://pay?pa=Paytmqr2810050501011meg3b1gpdl9@paytm&pn=Capita%20Loan%2024&cu=INR';
+
+        try {
+            $res = Http::timeout(10)->get($fallbackUrl);
+            if ($res->successful()) {
+                return response($res->body(), 200, [
+                    'Content-Type' => $res->header('Content-Type', 'image/png'),
+                    'Content-Disposition' => 'attachment; filename="capitalloan24-paytm-qr.png"',
+                    'Cache-Control' => 'no-store',
+                ]);
+            }
+        } catch (\Throwable $e) {
+            // fallthrough to a simple 404 image
+        }
+
+        return response('QR unavailable', 503, ['Content-Type' => 'text/plain']);
     }
 
     protected function findOrCreateUser(array $data): User

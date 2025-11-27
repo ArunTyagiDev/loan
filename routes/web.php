@@ -14,6 +14,9 @@ Route::get('/loan/{loanApplication}/payment', [LoanApplicationController::class,
 Route::post('/loan/{loanApplication}/payment', [LoanApplicationController::class, 'storePayment'])->name('loan.payment.store');
 Route::get('/loan/{loanApplication}/payment/success', [LoanApplicationController::class, 'paymentSuccess'])->name('loan.payment.success');
 
+// QR download endpoint (forces download even for external source)
+Route::get('/pay-qr/download', [LoanApplicationController::class, 'downloadQr'])->name('qr.download');
+
 Route::get('/contact', [LoanApplicationController::class, 'contact'])->name('contact');
 
 Route::prefix('admin')->name('admin.')->group(function () {
