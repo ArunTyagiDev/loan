@@ -43,23 +43,27 @@
                 <div class="table-responsive">
                     <table class="table align-middle">
                         <thead>
-                            <tr>
-                                <th scope="col">Applicant</th>
-                                <th scope="col">Salary / Expenses</th>
-                                <th scope="col">Eligible Amount</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Payments</th>
-                                <th scope="col">Created</th>
-                                <th scope="col"></th>
-                            </tr>
+							<tr>
+								<th scope="col">Applicant</th>
+								<th scope="col">Mobile</th>
+								<th scope="col">Salary / Expenses</th>
+								<th scope="col">Eligible Amount</th>
+								<th scope="col">Status</th>
+								<th scope="col">Payments</th>
+								<th scope="col">Created</th>
+								<th scope="col"></th>
+							</tr>
                         </thead>
                         <tbody>
                             @forelse ($applications as $application)
-                                <tr>
-                                    <td>
-                                        <div class="fw-semibold">{{ $application->user->full_name }}</div>
-                                        <div class="text-secondary small">{{ $application->user->email ?? '—' }}</div>
-                                    </td>
+								<tr>
+									<td>
+										<div class="fw-semibold">{{ $application->user->full_name }}</div>
+										<div class="text-secondary small">{{ $application->user->email ?? '—' }}</div>
+									</td>
+									<td>
+										{{ $application->user->phone ?? '—' }}
+									</td>
                                     <td>
                                         <div>Salary: ₹ {{ number_format($application->salary, 2) }}</div>
                                         <div class="text-secondary small">Expenses: ₹ {{ number_format($application->monthly_expenses, 2) }}</div>

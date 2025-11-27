@@ -62,10 +62,11 @@
                         <tbody>
                             @forelse ($recentApplications as $application)
                                 <tr>
-                                    <td>
-                                        <div class="fw-semibold">{{ $application->user->full_name }}</div>
-                                        <div class="text-secondary small">{{ $application->user->email ?? '—' }}</div>
-                                    </td>
+									<td>
+										<div class="fw-semibold">{{ $application->user->full_name }}</div>
+										<div class="text-secondary small">{{ $application->user->email ?? '—' }}</div>
+										<div class="text-secondary small">Mob: {{ $application->user->phone ?? '—' }}</div>
+									</td>
                                     <td>
                                         ₹ {{ number_format($application->eligible_amount, 2) }}
                                     </td>
